@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id "io.freefair.lombok" version "6.0.0-m2"
 }
 
 repositories {
@@ -9,10 +10,24 @@ repositories {
 def junitVersion = "5.7.2"
 
 dependencies {
+//    testImplementation(
+//            "io.rest-assured:rest-assured:4.3.1",
+//            "org.assertj:assertj-core:3.19.0",
+//            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+
     testImplementation(
+            //client
             "io.rest-assured:rest-assured:4.3.1",
-            "org.assertj:assertj-core:3.19.0",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            //config
+            "org.aeonbits.owner:owner:1.0.12",
+            //json
+            "com.fasterxml.jackson.core:jackson-databind:2.11.2",
+            //JUnit
+            "org.junit.jupiter:junit-jupiter-api:5.7.2",
+            "org.junit.jupiter:junit-jupiter-engine:5.7.2",
+            "io.rest-assured:rest-assured:4.3.1",
+            "org.assertj:assertj-core:3.19.0"
+    )
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
